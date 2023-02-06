@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <h3>Alcohol blood level calculator</h3>
+      <h3>Calculating alcohol blood level</h3>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Weight</label>
@@ -41,7 +41,31 @@ function App() {
         <div>
           <label>Bottles</label>
           <select name="bottles" value={bottles} onChange={e => setBottles(e.target.value)} >
-            <option value="1.3">Light</option>
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="1">3</option>
+            <option value="1">4</option>
+            <option value="1">5</option>
+            <option value="1">6</option>
+            <option value="1">7</option>
+            <option value="1">8</option>
+            <option value="1">9</option>
+            <option value="1">10</option>
+          </select>
+        </div>
+        <div>
+        <label>Time</label>
+          <select name="time" value={time} onChange={e => setTime(e.target.value)} >
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="1">3</option>
+            <option value="1">4</option>
+            <option value="1">5</option>
+            <option value="1">6</option>
+            <option value="1">7</option>
+            <option value="1">8</option>
+            <option value="1">9</option>
+            <option value="1">10</option>
           </select>
         </div>
         <div>
