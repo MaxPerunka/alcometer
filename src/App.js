@@ -3,7 +3,8 @@ import './App.css';
 
 function App() {
   const [weight, setWeight] = useState(90);
-  const [intensity, setIntensity] = useState(1.3);
+  const [bottles, setBottles] = useState(1);
+  const [time, setTime] = useState(1);
   const [gender, setGender] = useState('male');
   const [result, setResult] = useState(0);
 
@@ -28,13 +29,9 @@ function App() {
           <input name="weight" type="number" step="1" value={weight} onChange={e => setWeight(e.target.value)} ></input>
         </div>
         <div>
-          <label>Intensity</label>
+          <label>Bottles</label>
           <select name="intensity" value={intensity} onChange={e => setIntensity(e.target.value)} >
             <option value="1.3">Light</option>
-            <option value="1.5">Usual</option>
-            <option value="1.7">Moderate</option>
-            <option value="2">Hard</option>
-            <option value="2.2">Very Hard</option>
           </select>
         </div>
         <div>
