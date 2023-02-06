@@ -74,7 +74,7 @@ function App() {
           <input type="radio" name="gender" value="female" onChange={e => setGender(e.target.value)} /><label>Female</label>
         </div>
         <div>
-          <output>{result.toFixed(0)}</output>
+          <output>{result.toFixed(1)}</output>
         </div>
         <button>Calculate</button>
       </form>
