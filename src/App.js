@@ -10,19 +10,29 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    let calories = 0;
+    let liters = bottles * 0.33;
+    let grams = liters * 8 * 4.5
+    let burning = weight / 10
+    let gramsLeft = grams - (burning * time)
+    let ratkaisu = 0
     if (gender === 'male') {
-      calories = (879 + 10.2 * weight) * intensity;
+       ratkaisu = gramsLeft / (weight * 0.7);
     }
     else {
-      calories = (795 + 7.18 * weight) * intensity;
+      ratkaisu = gramsLeft / (weight * 0.6);
     }
-    setResult(calories)
+    if (ratkaisu >= 0) {
+      ratkaisu = ratkaisu
+    }
+    else {
+      ratkaisu = 0
+    }
+    setResult(ratkaisu)
   }
 
   return (
     <>
-      <h3>Calories</h3>
+      <h3>Alcohol blood level calculator</h3>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Weight</label>
@@ -30,7 +40,7 @@ function App() {
         </div>
         <div>
           <label>Bottles</label>
-          <select name="intensity" value={intensity} onChange={e => setIntensity(e.target.value)} >
+          <select name="bottles" value={bottles} onChange={e => setBottles(e.target.value)} >
             <option value="1.3">Light</option>
           </select>
         </div>
